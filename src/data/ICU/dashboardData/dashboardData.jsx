@@ -2,8 +2,8 @@ import { myImg } from "../../../assets/ICUimages/images";
 
 export const statCards = [
   {
-    label: "Total Beds",
-    value: "20",
+    label: "Total Bedsssssssss",
+    value: "20000",
     color: "text-zinc-800",
     image: myImg.total_beds,
   },
