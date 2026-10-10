@@ -1,0 +1,174 @@
+/* =========================================================
+   PRINT STYLES
+========================================================= */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 15mm;
+  }
+
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    min-height: 100%;
+    background: #ffffff !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide screen-only elements */
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Print helpers */
+  .print\:block {
+    display: block !important;
+  }
+
+  .print\:flex {
+    display: flex !important;
+  }
+
+  .print\:fixed {
+    position: fixed !important;
+  }
+
+  /* Main printable container */
+  .mainDiv {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: calc(297mm - 30mm);
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    overflow: visible !important;
+  }
+
+  /* Equal margins on all sides */
+  .print\:mainDivPadding {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Typography */
+  .print\:text {
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+  }
+
+  .print\:subText {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Prevent page breaks inside sections */
+  .print\:break-inside-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  table {
+    page-break-inside: auto;
+    width: 100% !important;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  td,
+  th {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  img {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    max-width: 100% !important;
+  }
+
+  /* Signature block alignment */
+  .print-signature {
+    position: fixed !important;
+    right: 15mm !important;
+    bottom: 18mm !important;
+    text-align: right !important;
+    z-index: 10 !important;
+    min-width: 140px;
+  }
+
+  /* Footer alignment */
+  .print-footer {
+    position: fixed !important;
+    left: 15mm !important;
+    bottom: 8mm !important;
+    width: calc(100% - 30mm) !important;
+    font-size: 10px !important;
+    z-index: 9 !important;
+  }
+
+  /* Optional: if your page is shifting to one side, force the root wrapper */
+  .page-wrapper,
+  .print-wrapper,
+  .mainDiv {
+    transform: none !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+}
+
+/* =========================================================
+   A5 SUPPORT
+========================================================= */
+
+@media print and (max-width: 562px) {
+  @page {
+    size: A5 portrait;
+    margin: 10mm;
+  }
+
+  .print\:text {
+    font-size: 11px !important;
+  }
+
+  .print\:subText {
+    font-size: 9px !important;
+  }
+
+  .print-signature {
+    right: 10mm !important;
+    bottom: 15mm !important;
+  }
+
+  .print-footer {
+    left: 10mm !important;
+    width: calc(100% - 20mm) !important;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  .bill-printable-area {
+    position: relative;
+    min-height: 277mm;
+    padding-bottom: 35mm !important;
+    box-sizing: border-box;
+  }
+}

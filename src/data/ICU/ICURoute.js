@@ -1,0 +1,35 @@
+import {
+  LayoutGrid,
+  UserCheck,
+  BedDouble,
+  FileHeart,
+  ClipboardList,
+  Pill,
+  HeartPulse,
+  GlassWater,
+  FileSearch,
+  Stethoscope,
+  FileDiff,
+  LogOut,
+  FolderOpen,
+  FileText,
+  UserPlus
+} from "lucide-react";
+
+export const ICURoutes = [
+  { title: "Dashboard", link: "/icu", icon: <LayoutGrid size={18} /> },
+  { title: "Admission", link: "/icu-admission", icon: <UserPlus size={18} /> },
+  { title: "Admin Panel", link: "/icu-admin-panel", icon: <UserCheck size={18} /> },
+  // { title: "Bed & Patients", link: "/icu-bed-patient", icon: <BedDouble size={18} /> },
+  { title: "Vitals", link: "/icu-vitals", icon: <HeartPulse size={18} /> },
+  { title: "Doctor Notes", link: "/icu-doctor-notes", icon: <Stethoscope size={18} /> },
+  { title: "Nursing Notes", link: "/icu-nursing-notes", icon: <ClipboardList size={18} /> },
+  { title: "Medication", link: "/icu-medication", icon: <Pill size={18} /> },
+  { title: "Care Plan", link: "/icu-care-plan", icon: <FileHeart size={18} /> },
+  { title: "Intake & Output", link: "/icu-intake-output", icon: <GlassWater size={18} /> },
+  { title: "Investigations", link: "/icu-investigation", icon: <FileSearch size={18} /> },
+  { title: "Procedures", link: "/icu-procedure", icon: <FileDiff size={18} /> },
+  { title: "Handover", link: "/icu-handover", icon: <FolderOpen size={18} /> },
+  // { title: "Transfer / Discharge", link: "/icu-transfer-discharge", icon: <LogOut size={18} /> },
+  { title: "Reports", link: "/icu-reports", icon: <FileText size={18} /> },
+];

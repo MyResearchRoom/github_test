@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: Inter,-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+}
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+ */
+
+@layer components {
+  .btn_bg {
+    background: linear-gradient(180deg, #835AA6 0%, #9252C8 100%);
+    /* background: #521785; */
+  }
+ .react-calendar__tile abbr {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    padding: 5px; 
+    border-radius: 50%; 
+    width: 24px; 
+    height: 24px; 
+    padding: 0; 
+  }
+  .react-calendar__month-view__days__day.react-calendar__tile {
+    height: 30px; /* Set a custom height for the day tiles */
+    /* width: 30px;  */
+    padding: 2px; /* Adjust the padding for the day cells */
+    font-size: 12px; /* Optionally adjust the font size */
+    line-height: 18px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+
+/* Target the weekdays in the month view */
+.react-calendar__month-view__weekdays__weekday {
+  height: 30px; /* Set a custom height for the weekday labels */
+  width: 30px;  /* Set a custom width for the weekday labels */
+  padding: 5px; /* Adjust padding around the weekday labels */
+  font-size: 14px; /* Optionally adjust the font size */
+  text-align: center; /* Center the text */
+}
+
+/* Optional: Reduce the margin between the weekdays */
+.react-calendar__month-view__weekdays {
+  margin-bottom: 2px; /* Decrease space below the weekdays row */
+}
+
+
+.react-calendar .react-calendar__year-view__viewmonths__month {
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+  /* Background colors for each status */
+  .on-time abbr {
+    background-color: rgb(164, 231, 164); 
+    padding: 2px;
+    border-radius: 100%;
+  }
+  
+  .late abbr {
+    background-color: #CAAC0BB2; /* Yellow for "Late" */
+    padding: 2px;
+    border-radius: 100%;
+    color: white;
+  }
+  
+  .leave abbr {
+    background-color: #ff4d4d; /* Red for "Leave" */
+    padding: 2px;
+    border-radius: 100%;
+    color: white;
+  }
+
+
+}
+
+@media print {
+  /* Ensure a 100px space at the top */
+  .mainHeader {
+    padding-top: 20px !important; /* Add 100px padding to the top */
+  }
+  @page{
+    size: A4;
+    min-height: 292mm;
+    margin: 30px;   
+      /* margin: 20mm 15mm 35mm 15mm;  */
+    /* margin-bottom: 20mm; */
+  }
+
+  .print-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 100px !important;       /* space to reserve */
+    text-align: center;
+  }
+
+
+
+  .print-content {
+    page-break-inside: avoid;
+  }
+  
+  .print\:mainDivPadding{
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+  .print\:signature{
+    position: fixed !important;
+    
+      /* margin-top: auto; */
+    bottom: 0px !important;
+    right:  40px !important;
+  }
+
+  .print\:text {
+    font-size: 14px !important;
+  }
+  .print\:subText {
+    font-size: 12px !important;
+  }
+
+   .print-signature {
+    display: block !important;
+    break-inside: avoid !important;
+    page-break-after: auto !important;
+
+  }
+
+  /* .print-signature::before {
+    content: "";
+    display: block;
+    height: 100%;        
+  } */
+
+   .signature-section {
+    position: fixed !important;
+    bottom: 0 !important; 
+    page-break-before: always !important; 
+       /* position: fixed !important;
+    bottom: 0 !important; 
+    right: 15mm !important;
+    text-align: right !important; */
+  }
+
+  .content-body {
+    page-break-inside: auto !important;
+    margin-bottom: 120px !important; /* give space so content never overlaps signature */
+  }
+
+    .page-break {
+    page-break-before: always; /* force new page */
+  }
+}
+
+@media print and (max-width: 562px) {
+  @page {
+    size: A4 portrait !important;
+    margin-top: 20px !important;
+    /* padding-top: 100px !important; */
+  }
+ 
+  .no-break {
+    page-break-inside: avoid;
+  }
+  .mainDiv {
+    font-size: 11px;
+  }
+  .print\:text {
+    font-size: 12px !important;
+  }
+  .print\:subText {
+    font-size: 10px !important;
+  }
+
+  .print\:mainHeader {
+    padding-top: 10px !important; /* Add 100px padding to the top */
+  }
+
+  .print\:mainDivPadding{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .print\:signature{
+    position: fixed !important;
+    bottom: 0px !important;
+    right:  20px !important;
+  }
+}
+
+
+
+.button-hover-slide {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.5s ease-in-out;
+}
+
+.button-hover-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #b986fb; /* hover background color */
+  transition: left 1s ease-in-out;
+  z-index: 0;
+}
+
+.button-hover-slide:hover::before {
+  left: 0;
+}
+
+.button-hover-slide:hover {
+  color: white !important; /* text color when hovered */
+}
+
+.button-hover-slide > * {
+  position: relative;
+  z-index: 1; /* keep text/icons above background */
+}
+
+
+.Toastify__toast-container {
+  z-index: 10000 !important;
+}
